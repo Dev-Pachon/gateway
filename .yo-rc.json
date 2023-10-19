@@ -1,0 +1,53 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 2,
+    "applicationType": "gateway",
+    "authenticationType": "oauth2",
+    "baseName": "gateway",
+    "blueprints": [],
+    "buildTool": "gradle",
+    "cacheProvider": "no",
+    "clientFramework": "react",
+    "clientPackageManager": "npm",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1697753077329,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "devServerPort": 9062,
+    "dtoSuffix": "DTO",
+    "enableGradleEnterprise": false,
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "entitySuffix": "",
+    "gradleEnterpriseHost": "",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "7.9.4",
+    "jwtSecretKey": "NThmYjFkZTE3MTBkNTFlZjE0ZDYxMGY2MWQyZmIyNzAxY2VlODJkNmEwNGM0NTE3ZjMwMTMwNGIyN2Y4MDlmMWIxYmI3ZWFjYWYzNGZjYTdjMmVlNmI3ZTQ4OTYxOGJiZDEzOGUzMWRmYzQ4NTI3NzRkYWUxMDRmNDM3YTUzZjE=",
+    "languages": ["en"],
+    "messageBroker": false,
+    "microfrontends": [
+      {
+        "baseName": "laboratory"
+      }
+    ],
+    "nativeLanguage": "en",
+    "otherModules": [],
+    "packageFolder": "com/bhsr/emt/gateway",
+    "packageName": "com.bhsr.emt.gateway",
+    "pages": [],
+    "prodDatabaseType": "postgresql",
+    "reactive": true,
+    "searchEngine": false,
+    "serverPort": "8080",
+    "serviceDiscoveryType": "consul",
+    "skipCheckLengthOfIdentifier": false,
+    "skipClient": false,
+    "skipFakeData": false,
+    "skipUserManagement": true,
+    "testFrameworks": ["cypress"],
+    "websocket": false,
+    "withAdminUi": true
+  }
+}
