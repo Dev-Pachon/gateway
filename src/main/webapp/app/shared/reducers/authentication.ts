@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { Storage } from 'react-jhipster';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { serializeAxiosError } from './reducer.utils';
@@ -86,10 +86,12 @@ export const AuthenticationSlice = createSlice({
           account: action.payload.data,
         };
       })
-      .addCase(logoutServer.fulfilled, (state, action) => ({
-        ...initialState,
-        logoutUrl: action.payload.data.logoutUrl,
-      }))
+      .addCase(logoutServer.fulfilled, (state, action) => {
+        return {
+          ...initialState,
+          logoutUrl: action.payload.data.logoutUrl,
+        };
+      })
       .addCase(getAccount.pending, state => {
         state.loading = true;
       });

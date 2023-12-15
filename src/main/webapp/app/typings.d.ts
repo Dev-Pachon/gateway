@@ -17,3 +17,8 @@ declare module '@laboratory/entities-menu' {
   const _default: () => JSX.Element;
   export default _default;
 }
+
+declare module '@laboratory/medical-user-routes' {
+  const _default: () => JSX.Element;
+  export default _default;
+}

@@ -69,7 +69,8 @@ public class SecurityConfiguration {
     private final ReactiveClientRegistrationRepository clientRegistrationRepository;
 
     // See https://github.com/jhipster/generator-jhipster/issues/18868
-    // We don't use a distributed cache or the user selected cache implementation here on purpose
+    // We don't use a distributed cache or the user selected cache implementation
+    // here on purpose
     private final Cache<String, Mono<Jwt>> users = Caffeine
         .newBuilder()
         .maximumSize(10_000)
@@ -139,7 +140,7 @@ public class SecurityConfiguration {
             .pathMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN);
 
         http.oauth2Login(oauth2 -> oauth2.authorizationRequestResolver(authorizationRequestResolver(this.clientRegistrationRepository)))
-            
+
             .oauth2ResourceServer()
                 .jwt()
                 .jwtAuthenticationConverter(jwtAuthenticationConverter());

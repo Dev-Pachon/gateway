@@ -43,8 +43,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/gateway
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/gateway
-    username: gateway
-    password:
+    username: admin
+    password: admin
   thymeleaf:
     cache: true
   sleuth:

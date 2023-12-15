@@ -30,7 +30,8 @@ public class LogoutResource {
      * @param idToken the ID token.
      * @param request a {@link ServerHttpRequest} request.
      * @param session the current {@link WebSession}.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and a body with a global logout URL.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and a body
+     * with a global logout URL.
      */
     @PostMapping("/api/logout")
     public Mono<Map<String, String>> logout(
@@ -38,7 +39,7 @@ public class LogoutResource {
         ServerHttpRequest request,
         WebSession session
     ) {
-        return session.invalidate().then(this.registration.map(oidc -> prepareLogoutUri(request, oidc, idToken)));
+        return session.invalidate().then(this.registration.map(oidc -> prepareLogoutUri(request, oidc, idToken)).log());
     }
 
     private Map<String, String> prepareLogoutUri(ServerHttpRequest request, ClientRegistration clientRegistration, OidcIdToken idToken) {
@@ -56,6 +57,7 @@ public class LogoutResource {
         } else {
             logoutUrl.append("?id_token_hint=").append(idToken.getTokenValue()).append("&post_logout_redirect_uri=").append(originUrl);
         }
+
         return Map.of("logoutUrl", logoutUrl.toString());
     }
 }

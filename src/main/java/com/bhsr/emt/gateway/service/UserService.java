@@ -42,7 +42,8 @@ public class UserService {
     }
 
     /**
-     * Update basic information (first name, last name, email, language) for the current user.
+     * Update basic information (first name, last name, email, language) for the
+     * current user.
      *
      * @param firstName first name of user.
      * @param lastName  last name of user.
@@ -124,6 +125,7 @@ public class UserService {
 
     /**
      * Gets a list of all the authorities.
+     *
      * @return a list of all the authorities.
      */
     @Transactional(readOnly = true)
@@ -132,7 +134,8 @@ public class UserService {
     }
 
     private Mono<User> syncUserWithIdP(Map<String, Object> details, User user) {
-        // save authorities in to sync user roles/groups between IdP and JHipster's local database
+        // save authorities in to sync user roles/groups between IdP and JHipster's
+        // local database
         Collection<String> userAuthorities = user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toList());
 
         return getAuthorities()
@@ -154,7 +157,8 @@ public class UserService {
             .then(userRepository.findOneByLogin(user.getLogin()))
             .switchIfEmpty(saveUser(user, true))
             .flatMap(existingUser -> {
-                // if IdP sends last updated information, use it to determine if an update should happen
+                // if IdP sends last updated information, use it to determine if an update
+                // should happen
                 if (details.get("updated_at") != null) {
                     Instant dbModifiedDate = existingUser.getLastModifiedDate();
                     Instant idpModifiedDate;
@@ -194,6 +198,9 @@ public class UserService {
         } else {
             throw new IllegalArgumentException("AuthenticationToken is not OAuth2 or JWT!");
         }
+
+        log.debug("Authentication Token: '{}'", authToken);
+
         User user = getUser(attributes);
         user.setAuthorities(
             authToken
