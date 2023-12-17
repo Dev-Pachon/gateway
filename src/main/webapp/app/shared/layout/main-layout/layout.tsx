@@ -21,29 +21,36 @@ const MainLayout = ({ isAuthenticated, currentLocale, children }) => {
   };
 
   return (
-    <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBarComponent open={open} toggleDrawer={toggleDrawer} isAuthenticated={isAuthenticated} />
-        {isAuthenticated && <DrawerComponent open={open} toggleDrawer={toggleDrawer} />}
-        <Box
-          component="main"
-          sx={{
-            backgroundColor: theme => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]),
-            flexGrow: 1,
-            height: 'calc(100vh - 64px)',
-            overflow: 'auto',
-          }}
-        >
-          <Container sx={{ p: 2 }}>
-            <Box component={Paper} sx={{ p: 2, align: 'center' }}>
-              {children}
+    <>
+      {isAuthenticated ? (
+        <ThemeProvider theme={mdTheme}>
+          <Box sx={{ display: 'flex' }}>
+            <CssBaseline />
+            <AppBarComponent open={open} toggleDrawer={toggleDrawer} isAuthenticated={isAuthenticated} />
+            {isAuthenticated && <DrawerComponent open={open} toggleDrawer={toggleDrawer} />}
+            <Box
+              component="main"
+              sx={{
+                backgroundColor: theme => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]),
+                flexGrow: 1,
+                height: 'calc(100vh - 64px)',
+                marginTop: '64px',
+                overflow: 'auto',
+              }}
+            >
+              <Container sx={{ p: 2 }}>
+                <Box component={Paper} sx={{ p: 2, align: 'center' }}>
+                  {children}
+                </Box>
+                <Footer sx={{ marginTop: 2 }} />
+              </Container>
             </Box>
-            <Footer sx={{ marginTop: 2 }} />
-          </Container>
-        </Box>
-      </Box>
-    </ThemeProvider>
+          </Box>
+        </ThemeProvider>
+      ) : (
+        children
+      )}
+    </>
   );
 };
 
