@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const drawerWidth = 280;
+const drawerWidth = 320;
 
 const AppBar = styled(
   ({ open, children, ...props }: { open: boolean; children: any }) => (

@@ -6,6 +6,7 @@ import ListSubheader from '@mui/material/ListSubheader';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Divider } from '@mui/material';
 import { LaboratoryMenu } from 'app/shared/layout/menus/laboratory';
+import { Link } from 'react-router-dom';
 
 const Menu = ({ mobile, toggleDrawer }) => {
   const closeMenu = () => {
@@ -17,31 +18,32 @@ const Menu = ({ mobile, toggleDrawer }) => {
     <>
       <React.Fragment>
         <LaboratoryMenu closeMenu={closeMenu} />
+
         <Divider></Divider>
 
         <ListSubheader component="div" inset>
           Módulos
         </ListSubheader>
 
-        <ListItemButton component={'a'} href="localhost:3000/" onClick={closeMenu}>
-          <ListItemIcon>
-            <AssignmentIcon />
-          </ListItemIcon>
-          <ListItemText primary="Historia clínica" />
-        </ListItemButton>
-
-        <ListItemButton component={'a'} href="localhost:5173/" onClick={closeMenu}>
-          <ListItemIcon>
-            <AssignmentIcon />
-          </ListItemIcon>
-          <ListItemText primary="Observaciones" />
-        </ListItemButton>
-
-        <ListItemButton component={'a'} href="localhost:5174/" onClick={closeMenu}>
+        <ListItemButton component={Link} to="http://localhost:5174/med" onClick={closeMenu}>
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
           <ListItemText primary="Medicamentos" />
+        </ListItemButton>
+
+        <ListItemButton component={Link} to="http://localhost:3000/emr" onClick={closeMenu}>
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary="Historia Clínica" />
+        </ListItemButton>
+
+        <ListItemButton component={Link} to="http://localhost:5173/oap" onClick={closeMenu}>
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary="Observaciones y procedimientos" />
         </ListItemButton>
       </React.Fragment>
     </>
