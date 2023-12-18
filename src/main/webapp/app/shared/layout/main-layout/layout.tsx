@@ -10,7 +10,7 @@ import DrawerComponent from 'app/shared/layout/drawer/drawer-component';
 import Footer from 'app/shared/layout/footer/footer';
 
 const mdTheme = createTheme({
-  palette: { primary: { main: '#CA5724' }, secondary: { main: '#04b44c' } },
+  palette: { primary: { main: '#ca5724' }, secondary: { main: '#04b44c' } },
 });
 
 const MainLayout = ({ isAuthenticated, currentLocale, children }) => {
@@ -24,8 +24,8 @@ const MainLayout = ({ isAuthenticated, currentLocale, children }) => {
     <>
       {isAuthenticated ? (
         <ThemeProvider theme={mdTheme}>
+          <CssBaseline />
           <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
             <AppBarComponent open={open} toggleDrawer={toggleDrawer} isAuthenticated={isAuthenticated} />
             {isAuthenticated && <DrawerComponent open={open} toggleDrawer={toggleDrawer} />}
             <Box
@@ -48,7 +48,7 @@ const MainLayout = ({ isAuthenticated, currentLocale, children }) => {
           </Box>
         </ThemeProvider>
       ) : (
-        children
+        <ThemeProvider theme={mdTheme}>children</ThemeProvider>
       )}
     </>
   );

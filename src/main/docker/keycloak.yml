@@ -2,10 +2,11 @@
 version: '3.8'
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:19.0.1
+    build: ./keycloak/
     command: ['start-dev --import-realm']
     volumes:
       - ./realm-config:/opt/keycloak/data/import
+      - ./keycloak/themes:/opt/keycloak/themes
     environment:
       - KC_DB=dev-file
       - KEYCLOAK_ADMIN=admin
