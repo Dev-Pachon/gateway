@@ -48,7 +48,7 @@ const MainLayout = ({ isAuthenticated, currentLocale, children }) => {
           </Box>
         </ThemeProvider>
       ) : (
-        <ThemeProvider theme={mdTheme}>children</ThemeProvider>
+        <ThemeProvider theme={mdTheme}>{children}</ThemeProvider>
       )}
     </>
   );
