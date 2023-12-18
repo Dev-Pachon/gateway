@@ -116,7 +116,7 @@ export const Home = () => {
                   }}
                 >
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Bienvenido!!
+                    Bienvenido personal del EMT
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
                     En este sitio podrá administrar los exámenes de laboratorio de los pacientes.

@@ -23,25 +23,25 @@ const Menu = ({ mobile, toggleDrawer }) => {
           Módulos
         </ListSubheader>
 
-        <ListItemButton>
+        <ListItemButton component={'a'} href="localhost:3000/" onClick={closeMenu}>
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
           <ListItemText primary="Historia clínica" />
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton component={'a'} href="localhost:5173/" onClick={closeMenu}>
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
-          <ListItemText primary="Observaciones" />
+          <ListItemText primary="Observaciones y procedimientos" />
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton component={'a'} href="localhost:5174/" onClick={closeMenu}>
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
-          <ListItemText primary="Inventario" />
+          <ListItemText primary="Medicamentos" />
         </ListItemButton>
       </React.Fragment>
     </>

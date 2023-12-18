@@ -1,5 +1,3 @@
-import './header.scss';
-
 import React, { useState } from 'react';
 import { Storage } from 'react-jhipster';
 import { Collapse, Nav, Navbar, NavbarToggler } from 'reactstrap';
