@@ -11,7 +11,7 @@ import Menu from 'app/shared/layout/menus/menu';
 
 const logoBHSR = 'content/images/logo.jpg';
 
-const drawerWidth = 280;
+const drawerWidth = 320;
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
   overflowX: 'hidden',

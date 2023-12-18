@@ -34,7 +34,7 @@ const Menu = ({ mobile, toggleDrawer }) => {
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
-          <ListItemText primary="Observaciones y procedimientos" />
+          <ListItemText primary="Observaciones" />
         </ListItemButton>
 
         <ListItemButton component={'a'} href="localhost:5174/" onClick={closeMenu}>

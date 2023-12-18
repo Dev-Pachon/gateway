@@ -39,7 +39,7 @@ const AppRoutes = () => {
           path="laboratory/*"
           element={
             <Suspense fallback={loading}>
-              <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
+              <PrivateRoute hasAnyAuthorities={[AUTHORITIES.MEDICAL_USER, AUTHORITIES.LAB_USER, AUTHORITIES.ADMIN]}>
                 <LaboratoryRoutes />
               </PrivateRoute>
             </Suspense>

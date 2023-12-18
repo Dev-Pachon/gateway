@@ -8,7 +8,7 @@
 
         <img src="${url.resourcesPath}/assets/logo.jpg" width="100px" />
         <div class="kc-header-title">
-            EMT
+            Acceder a tu cuenta
         </div>
 
 
@@ -28,7 +28,7 @@
                                            autocomplete="off"
                                            aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                                     />
-                                    <label for="username" class="form__label">Nombre de usuario</label>
+                                    <label for="username" class="form__label">Usuario o email</label>
                                 </div>
                                 <#if messagesPerField.existsError('username','password')>
                                     <span id="input-error" class="error-message"
