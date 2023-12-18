@@ -38,7 +38,7 @@ const MainLayout = ({ isAuthenticated, currentLocale, children }) => {
                 overflow: 'auto',
               }}
             >
-              <Container sx={{ p: 2 }}>
+              <Container sx={{ p: 2, maxWidth: '100%' }}>
                 <Box component={Paper} sx={{ p: 2, align: 'center' }}>
                   {children}
                 </Box>
