@@ -13,7 +13,7 @@ import { Button, createTheme, ThemeProvider } from '@mui/material';
 import Footer from 'app/shared/layout/footer/footer';
 
 const signin = 'content/images/signin.jpeg';
-const logo = 'content/images/logo.jpg';
+const logo = 'content/images/logo_emt.webp';
 const welcome = 'content/images/welcome.jpeg';
 
 const theme = createTheme({

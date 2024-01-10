@@ -9,7 +9,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Grid, useMediaQuery } from '@mui/material';
 import Menu from 'app/shared/layout/menus/menu';
 
-const logoBHSR = 'content/images/logo.jpg';
+const logoBHSR = 'content/images/logo_emt.webp';
 
 const drawerWidth = 320;
 const openedMixin = (theme: Theme): CSSObject => ({
