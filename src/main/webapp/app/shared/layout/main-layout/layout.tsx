@@ -10,7 +10,7 @@ import DrawerComponent from 'app/shared/layout/drawer/drawer-component';
 import Footer from 'app/shared/layout/footer/footer';
 
 const mdTheme = createTheme({
-  palette: { primary: { main: '#ca5724' }, secondary: { main: '#04b44c' } },
+  palette: { primary: { main: '#2dacd1' }, secondary: { main: '#04b44c' } },
 });
 
 const MainLayout = ({ isAuthenticated, currentLocale, children }) => {

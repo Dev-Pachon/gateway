@@ -17,7 +17,7 @@ const logo = 'content/images/logo_emt.webp';
 const welcome = 'content/images/welcome.jpeg';
 
 const theme = createTheme({
-  palette: { primary: { main: '#ca5724' }, secondary: { main: '#04b44c' } },
+  palette: { primary: { main: '#2dacd1' }, secondary: { main: '#04b44c' } },
 });
 
 export const Home = () => {
